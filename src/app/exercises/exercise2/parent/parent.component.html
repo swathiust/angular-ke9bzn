@@ -1,0 +1,11 @@
+<div class="row">
+  <br />
+  <label for="item-input"> UserName From Parent Is:</label>
+  <input type="text" id="item-input" #newItem />
+  <br />
+  <br />
+  <button type="button" (click)="addNewUser(newItem.value)">
+    Display user
+  </button>
+  <app-child [username]="username"></app-child>
+</div>

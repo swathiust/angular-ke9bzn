@@ -18,5 +18,78 @@
   - Display error messages for invalid fields and overall form validation errors.
 </pre>
 <!--Do Not touch the code above this line!-->
-<hr/>
+<hr />
 <span>YOUR CODE HERE!</span>
+
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            name="name"
+            ngModel
+            required
+            #name="ngModel"
+          />
+          <span class="help-block" *ngIf="!name.valid && name.touched"
+            >Please enter the name!</span
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label for="email">Mail</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            #email="ngModel"
+          />
+
+          <span class="help-block" *ngIf="!email.valid && email.touched"
+            >Please enter a valid email!</span
+          >
+        </div>
+        <div class="col-sm-5 form-group">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            id="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            maxlength="10"
+            #password="ngModel"
+            pattern="[a-z0-9._%+-]++\.[a-z]"
+            required
+          />
+          <span class="help-block" *ngIf="!password.valid && password.touched"
+            >Please enter a valid password!</span
+          >
+          <div *ngIf="f.submitted && password.errors" class="invalid-feedback">
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['minlength']">
+              Password must be at least 6 characters
+            </div>
+            <div *ngIf="password.errors['maxlength']">
+              Username must not exceed 40 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="row">
+  <br />
+  <p>Child to parent</p>
+  <label for="item-input">Add UserName:</label>
+  <input type="text" id="item-input" #newItem />
+  <br />
+  <br />
+  <button type="button" (click)="addNewUser(newItem.value)">Display</button>
+</div>
