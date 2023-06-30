@@ -12,13 +12,13 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      {
-        path: 'exercises',
-        loadChildren: () =>
-          import('./exercises/exercises.module').then((m) => m.ExercisesModule),
-      },
-    ]),
+    // RouterModule.forRoot([
+    //   {
+    //     path: 'exercises',
+    //     loadChildren: () =>
+    //       import('./exercises/exercises.module').then((m) => m.ExercisesModule),
+    //   },
+    // ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
