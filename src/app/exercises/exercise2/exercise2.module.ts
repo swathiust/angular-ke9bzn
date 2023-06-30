@@ -17,12 +17,12 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    // RouterModule.forChild([
-    //   {
-    //     path: '',
-    //     component: Exercise2Component,
-    //   },
-    // ]),
+    RouterModule.forChild([
+      {
+        path: '',
+        component: Exercise2Component,
+      },
+    ]),
   ],
 })
 export class Exercise2Module {}
