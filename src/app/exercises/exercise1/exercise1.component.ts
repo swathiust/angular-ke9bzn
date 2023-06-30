@@ -16,7 +16,11 @@ export class Exercise1Component {
     email: '',
     password: '',
   };
+
+  success = '';
+
   onSubmit(form: NgForm) {
     console.log(form);
+    this.success = 'successfully submitted form';
   }
 }
